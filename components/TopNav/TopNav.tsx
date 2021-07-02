@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Flex, Heading, useTheme, IconButton } from '@chakra-ui/react'
+import { Flex, Heading, useTheme, IconButton, Text } from '@chakra-ui/react'
 import {
   ArrowRightIcon,
   ArrowLeftIcon,
@@ -37,8 +37,15 @@ export const TopNav: React.FC<TopNavProps> = ({ menuLinks }) => {
         px={5}
         align="center"
       >
-        <Heading color="white">Redshift</Heading>
-        <ArrowLeftIcon color="red.400" ml={5} />
+        <Heading color="white" fontFamily="orbitron">
+          <Text color="red.500" display="inline-block">
+            Red
+          </Text>
+          <Text color="white" display="inline-block">
+            shift
+          </Text>
+        </Heading>
+        <ArrowLeftIcon color="blue.500" ml={5} />
         <Flex
           display="flex"
           py={4}
@@ -47,7 +54,7 @@ export const TopNav: React.FC<TopNavProps> = ({ menuLinks }) => {
           ml={4}
         />
         <Flex display="flex" py={4} borderLeft="1px solid #0061C0" mr={4} />
-        <ArrowRightIcon color="blue.400" mr={5} />
+        <ArrowRightIcon color="red.400" mr={5} />
         <Flex align="center">
           {menuLinks.map((link, i) => {
             const isRouteActive = router.asPath === link?.route

@@ -11,14 +11,21 @@ import {
   Link,
   Image,
   Box,
+  Progress,
 } from '@chakra-ui/react'
 import { CloseIcon, CheckIcon } from '@chakra-ui/icons'
 
 export const SanctumOfDomination = () => {
   return (
-    <Flex justify="center" direction="column" align="center">
+    <Flex justify="center" direction="column" align="center" pt={10}>
       <Flex direction="row" justify="space-around">
-        <Heading align="center" py={10} fontSize="6xl" color="blue.400">
+        <Heading
+          align="center"
+          py={10}
+          fontSize="6xl"
+          color="white"
+          fontFamily="LifeCraft"
+        >
           Sanctum Of Domination
         </Heading>
         <Flex direction="column" justify="center" align="center">
@@ -46,18 +53,24 @@ export const SanctumOfDomination = () => {
       <Flex>
         <Tabs>
           <TabList>
-            <StyledTab>The Tarragrue</StyledTab>
-            <StyledTab>The Eye Of The Jailer</StyledTab>
-            <StyledTab>The Nine</StyledTab>
-            <StyledTab>{`Remnant of Ner'zhul`}</StyledTab>
-            <StyledTab>Soulrender Dormazain</StyledTab>
-            <StyledTab>Painsmith Raznal</StyledTab>
-            <StyledTab>Guardian of the first Ones</StyledTab>
-            <StyledTab>Fatescripe Roh-Kalo</StyledTab>
-            <StyledTab>{`Kel'Thuzad`}</StyledTab>
-            <StyledTab>Sylvanas Windrunner</StyledTab>
+            <StyledTab img="tarragrueBig.png" title="The Tarragrue" />
+            <StyledTab
+              img="eyeOfTheJailerBig.png"
+              title="The Eye Of The Jailer"
+            />
+            <StyledTab img="theNine.png" title="The Nine" />
+            <StyledTab img="nerzhul.png" title="Remnant of Ner'zhul" />
+            <StyledTab img="dormazainBig.png" title="Soulrender Dormazain" />
+            <StyledTab img="raznal.png" title="Painsmith Raznal" />
+            <StyledTab
+              img="guardianBig.png"
+              title="Guardian of the first Ones"
+            />
+            <StyledTab img="rohKalo.png" title="Fatescribe Roh-Kalo" />
+            <StyledTab img="kelThuzad.png" title="Kel'Thuzad" />
+            <StyledTab img="sylvanasBig.png" title="Sylvannas Windrunner" />
           </TabList>
-          <TabPanels>
+          <TabPanels mt={12}>
             <TabPanel>
               <BossComingSoon title="The Tarragrue" />
             </TabPanel>
@@ -95,17 +108,18 @@ export const SanctumOfDomination = () => {
   )
 }
 
-export const StyledTab: React.FC<{ isDowned?: boolean }> = ({
-  children,
-  isDowned = false,
-}) => {
+export const StyledTab: React.FC<{
+  isDowned?: boolean
+  img: string
+  title: string
+  percentage?: number
+}> = ({ title, img, isDowned = false, percentage = 0 }) => {
   return (
     <Tab
       color="white"
       borderTopRadius="3xl"
       _selected={{
         color: 'blue.400',
-        bg: 'gray.800',
       }}
       _active={{
         bg: 'none',
@@ -114,13 +128,32 @@ export const StyledTab: React.FC<{ isDowned?: boolean }> = ({
         boxShadow: 'none',
       }}
     >
-      <Flex direction="column" align="center">
-        {isDowned ? (
-          <CheckIcon color="green.900" />
-        ) : (
-          <CloseIcon color="red.900" />
-        )}
-        <Text>{children}</Text>
+      <Flex
+        height="5rem"
+        direction="column"
+        align="center"
+        justify="space-between"
+        backgroundPosition="50% 5%"
+        backgroundImage={img}
+        backgroundSize="cover"
+      >
+        <Flex mt="-2rem">
+          {isDowned ? (
+            <CheckIcon color="green.900" />
+          ) : (
+            <CloseIcon color="red.900" />
+          )}
+        </Flex>
+        <Flex direction="column" mb="-1.8rem">
+          <Progress
+            width="full"
+            size="xs"
+            colorScheme="red"
+            isIndeterminate={percentage === 0 ? true : false}
+            value={percentage}
+          />
+          <Text>{title}</Text>
+        </Flex>
       </Flex>
     </Tab>
   )
@@ -137,9 +170,10 @@ const StyledLink: React.FC<{ to: string }> = ({ children, to }) => {
 const BossComingSoon: React.FC<{ title: string }> = ({ title }) => {
   return (
     <Flex direction="column" align="center">
-      <Heading fontSize={50} color="red.600">
+      <Heading fontSize={50} color="gray.200" fontFamily="LifeCraft">
         {title}
       </Heading>
+      <hr />
       <Heading fontSize={20} color="white" pt="10">
         The strategy for {title} is coming soon!{' '}
         <Text color="#3FC7EB" display="inline-block">
