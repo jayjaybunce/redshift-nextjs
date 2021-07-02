@@ -49,12 +49,12 @@ export const SanctumOfDomination = () => {
             <StyledTab>The Tarragrue</StyledTab>
             <StyledTab>The Eye Of The Jailer</StyledTab>
             <StyledTab>The Nine</StyledTab>
-            <StyledTab>Remnant of Ner'zhul</StyledTab>
+            <StyledTab>{`Remnant of Ner'zhul`}</StyledTab>
             <StyledTab>Soulrender Dormazain</StyledTab>
             <StyledTab>Painsmith Raznal</StyledTab>
             <StyledTab>Guardian of the first Ones</StyledTab>
             <StyledTab>Fatescripe Roh-Kalo</StyledTab>
-            <StyledTab>Kel'Thuzad</StyledTab>
+            <StyledTab>{`Kel'Thuzad`}</StyledTab>
             <StyledTab>Sylvanas Windrunner</StyledTab>
           </TabList>
           <TabPanels>
