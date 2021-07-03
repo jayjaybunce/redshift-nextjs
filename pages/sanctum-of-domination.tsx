@@ -10,8 +10,6 @@ import {
   Text,
   Link,
   Image,
-  Box,
-  Progress,
 } from '@chakra-ui/react'
 import { Tarragrue } from '../components'
 import { CloseIcon, CheckIcon } from '@chakra-ui/icons'
@@ -19,40 +17,33 @@ import { CloseIcon, CheckIcon } from '@chakra-ui/icons'
 export const SanctumOfDomination = () => {
   return (
     <Flex justify="center" direction="column" align="center" pt={10}>
-      <Flex direction="row" justify="space-around">
+      <Flex direction="column" justify="space-around">
         <Heading
+          pt={10}
           align="center"
-          py={10}
           fontSize="6xl"
-          color="white"
+          color="grey.800"
           fontFamily="LifeCraft"
         >
           Sanctum Of Domination
         </Heading>
-        <Flex direction="column" justify="center" align="center">
+        <Flex direction="row" justify="center" align="center" pb={10}>
           <StyledLink to="https://www.warcraftlogs.com/guild/reports-list/602292">
             <Flex direction="row" align="center" justify="center">
               <Image src="/WLfavicon.png" height="16px" width="16px" />
-              <Text ml={2}>WL</Text>
+              <Text ml={2}>Warcraft Logs</Text>
             </Flex>
           </StyledLink>
-          <Box
-            display="block"
-            borderTop="1px solid"
-            borderTopColor="blue.400"
-            width="10"
-            my={2}
-          />
           <StyledLink to="https://raider.io/guilds/us/stormrage/Redshift">
-            <Flex direction="row" align="center" justify="center">
+            <Flex direction="row" align="center" justify="center" pl={4}>
               <Image src="/RIOfavicon.webp" height="16px" width="16px" />
-              <Text ml={2}>RIO</Text>
+              <Text ml={2}>RaiderIO</Text>
             </Flex>
           </StyledLink>
         </Flex>
       </Flex>
-      <Flex>
-        <Tabs>
+      <Flex pt={10} align="center">
+        <Tabs orientation="vertical">
           <TabList>
             <StyledTab img="tarragrueBig.png" title="The Tarragrue" />
             <StyledTab
@@ -71,35 +62,35 @@ export const SanctumOfDomination = () => {
             <StyledTab img="kelThuzad.png" title="Kel'Thuzad" />
             <StyledTab img="sylvanasBig.png" title="Sylvannas Windrunner" />
           </TabList>
-          <TabPanels mt={12}>
-            <TabPanel>
+          <TabPanels>
+            <TabPanel w="6xl" p={0}>
               <Tarragrue />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="The Eye of the Jailer" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="The Nine" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="Remnant of Ner'zhul" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="Soulrender Dormazain" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="Painsmith Raznal" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="Guardian of the First Ones" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="Fatescripe Roh-Halo" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="Kel'Thuzad" />
             </TabPanel>
-            <TabPanel>
+            <TabPanel w="6xl">
               <BossComingSoon title="Sylvannas Windrunner" />
             </TabPanel>
           </TabPanels>
@@ -113,12 +104,10 @@ export const StyledTab: React.FC<{
   isDowned?: boolean
   img: string
   title: string
-  percentage?: number
-}> = ({ title, img, isDowned = false, percentage = 0 }) => {
+}> = ({ title, img, isDowned = false }) => {
   return (
     <Tab
-      color="white"
-      borderTopRadius="3xl"
+      color="gray.800"
       _selected={{
         color: 'blue.400',
       }}
@@ -128,32 +117,38 @@ export const StyledTab: React.FC<{
       _focus={{
         boxShadow: 'none',
       }}
+      p={2}
     >
+      <Image src={img} width="10rem" zIndex={2} />
       <Flex
-        height="5rem"
+        zIndex={1}
+        bg="gray.900"
         direction="column"
         align="center"
         justify="space-between"
-        backgroundPosition="50% 5%"
-        backgroundImage={img}
-        backgroundSize="cover"
+        width="25rem"
+        height="10rem"
+        p={2}
+        ml={-20}
+        flex={1}
+        borderRightRadius="3xl"
       >
-        <Flex mt="-2rem">
+        <Flex direction="column" align="center">
+          <Text color="white" fontSize={20}>
+            {title}
+          </Text>
           {isDowned ? (
             <CheckIcon color="green.900" />
           ) : (
-            <CloseIcon color="red.900" />
+            <CloseIcon
+              w={6}
+              h={6}
+              color="red.400"
+              position="absolute"
+              mr="-17.9rem"
+              mt="4rem"
+            />
           )}
-        </Flex>
-        <Flex direction="column" mb="-1.8rem">
-          <Progress
-            width="full"
-            size="xs"
-            colorScheme="red"
-            isIndeterminate={percentage === 0 ? true : false}
-            value={percentage}
-          />
-          <Text>{title}</Text>
         </Flex>
       </Flex>
     </Tab>

@@ -17,14 +17,7 @@ export const Tarragrue: React.FC<any> = () => {
   })
   return (
     <Flex justify="center">
-      <Box
-        color="white"
-        w="6xl"
-        bg="gray.900"
-        fontFamily="Roboto"
-        p={10}
-        boxShadow="14px 20px 14px -5px #000000"
-      >
+      <Box color="grey.800" w="6xl" fontFamily="Roboto" pl={16}>
         <ReactMarkdown
           components={markdownComponents}
           remarkPlugins={[gfm]}

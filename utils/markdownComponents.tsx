@@ -45,8 +45,10 @@ const getHeadingProps = (level: Levels) => {
   return {
     as: headingLevel,
     fontSize: headingSizes[headingLevel],
+    fontFamily: 'Roboto',
     fontWeight: '600',
     marginTop: '0.5rem',
+    color: 'gray.800',
   }
 }
 
@@ -57,7 +59,11 @@ export const markdownComponents = {
   h1({ level, children }: { level: any; children: React.ReactNode }) {
     const headingProps = getHeadingProps(level)
     return (
-      <Heading pt={6} {...headingProps} color="gray.500">
+      <Heading
+        {...headingProps}
+        _notFirst={{ pt: 6 }}
+        _first={{ fontFamily: 'LifeCraft', fontSize: 60, align: 'center' }}
+      >
         {children}
       </Heading>
     )
@@ -65,7 +71,7 @@ export const markdownComponents = {
   h2({ level, children }: { level: any; children: React.ReactNode }) {
     const headingProps = getHeadingProps(level)
     return (
-      <Heading pt={6} {...headingProps}>
+      <Heading {...headingProps} _notFirst={{ pt: 6 }}>
         {children}
       </Heading>
     )
@@ -73,7 +79,7 @@ export const markdownComponents = {
   h3({ level, children }: { level: any; children: React.ReactNode }) {
     const headingProps = getHeadingProps(level)
     return (
-      <Heading pt={6} {...headingProps}>
+      <Heading {...headingProps} _notFirst={{ pt: 6 }}>
         {children}
       </Heading>
     )
@@ -81,7 +87,7 @@ export const markdownComponents = {
   h4({ level, children }: { level: any; children: React.ReactNode }) {
     const headingProps = getHeadingProps(level)
     return (
-      <Heading pt={6} {...headingProps}>
+      <Heading {...headingProps} _notFirst={{ pt: 6 }}>
         {children}
       </Heading>
     )
@@ -89,7 +95,7 @@ export const markdownComponents = {
   h5({ level, children }: { level: any; children: React.ReactNode }) {
     const headingProps = getHeadingProps(level)
     return (
-      <Heading pt={6} {...headingProps}>
+      <Heading {...headingProps} _notFirst={{ pt: 6 }}>
         {children}
       </Heading>
     )
@@ -97,7 +103,7 @@ export const markdownComponents = {
   h6({ level, children }: { level: any; children: React.ReactNode }) {
     const headingProps = getHeadingProps(level)
     return (
-      <Heading pt={6} {...headingProps}>
+      <Heading {...headingProps} _notFirst={{ pt: 6 }}>
         {children}
       </Heading>
     )

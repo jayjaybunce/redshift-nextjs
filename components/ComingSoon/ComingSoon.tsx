@@ -2,10 +2,10 @@ import { Flex, Heading, Text, Image } from '@chakra-ui/react'
 
 export const ComingSoon: React.FC<{ title?: string }> = ({ title }) => {
   return (
-    <Flex direction="row" align="center" justify="center" mt={5}>
+    <Flex direction="row" align="center" justify="center" mt={5} height="5xl">
       <Flex direction="column" color="gray.200">
         <Heading>{title}</Heading>
-        <Text width="xl">
+        <Text width="xl" color="gray.900">
           {`Sorry! This page seems to be stuck on the flight path from Rut'Theran
           Village to Gadgetzan! Come back again to see if it's landed yet. If
           you have any ideas for this page please DM Krank.`}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from '@chakra-ui/react'
+import { Container, useTheme } from '@chakra-ui/react'
 import { TopNav } from '../TopNav/TopNav'
 import Head from 'next/head'
 
@@ -11,20 +11,26 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({
   maxWidth,
   children,
 }) => {
+  const theme = useTheme()
   try {
     let bodyEl
     if (window && document) {
       bodyEl = document.querySelector('body')
     }
     if (bodyEl) {
-      bodyEl.style.background = '#002248'
+      bodyEl.style.backgroundColor = theme.colors.gray[200]
     }
   } catch (e) {
     console.error(e)
   }
 
   return (
-    <Container maxW={maxWidth} padding={0}>
+    <Container
+      maxW={maxWidth}
+      padding={0}
+      backgroundImage="4kbg.png"
+      backgroundSize="1920px"
+    >
       <Head>
         <script>
           {`const whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true }`}

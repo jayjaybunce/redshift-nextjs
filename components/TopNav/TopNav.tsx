@@ -1,12 +1,9 @@
-import React, { useState } from 'react'
-import { Flex, Heading, useTheme, IconButton, Text } from '@chakra-ui/react'
+import React from 'react'
+import { Flex, Heading, useTheme, Text } from '@chakra-ui/react'
 import {
   ArrowRightIcon,
   ArrowLeftIcon,
   ChevronRightIcon,
-  ChevronDownIcon,
-  ChevronUpIcon,
-  ChevronLeftIcon,
 } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 
@@ -21,9 +18,6 @@ type TopNavProps = {
 }
 
 export const TopNav: React.FC<TopNavProps> = ({ menuLinks }) => {
-  const [isHeaderActive, setIsHeaderActive] = useState(true)
-  const [isHeaderHover, setIsHeaderHover] = useState(false)
-
   const theme = useTheme()
   const router = useRouter()
   return (
@@ -37,7 +31,7 @@ export const TopNav: React.FC<TopNavProps> = ({ menuLinks }) => {
         px={5}
         align="center"
       >
-        <Heading color="white" fontFamily="orbitron">
+        <Heading color="white" fontFamily="orbitron" fontSize={30}>
           <Text color="red.500" display="inline-block">
             Red
           </Text>
@@ -65,7 +59,7 @@ export const TopNav: React.FC<TopNavProps> = ({ menuLinks }) => {
                     key={i}
                     align="center"
                     mx={2}
-                    fontSize={15}
+                    fontSize={18}
                     fontWeight="300"
                     transition="0.2s ease all"
                     _hover={{
@@ -87,11 +81,7 @@ export const TopNav: React.FC<TopNavProps> = ({ menuLinks }) => {
                   </Flex>
                 </a>
                 {i < menuLinks.length - 1 ? (
-                  isRouteActive ? (
-                    <ChevronLeftIcon color="blue.400" />
-                  ) : (
-                    <ChevronRightIcon color="blue.400" />
-                  )
+                  <ChevronRightIcon color="blue.400" />
                 ) : (
                   ''
                 )}
@@ -99,51 +89,6 @@ export const TopNav: React.FC<TopNavProps> = ({ menuLinks }) => {
             )
           })}
         </Flex>
-      </Flex>
-      <Flex
-        onMouseEnter={() => setIsHeaderHover(true)}
-        onMouseLeave={() => setIsHeaderHover(false)}
-        width="100"
-        display="flex"
-        backgroundImage="/idk.jpg"
-        height={isHeaderActive ? 56 : 5}
-        transition="0.3s ease all"
-        backgroundPosition="50% 5%"
-        borderBottomColor="blue.400"
-        borderBottomWidth="2px"
-        borderBottomStyle="solid"
-      >
-        <IconButton
-          aria-label="toggle header"
-          background="none"
-          padding={0}
-          height="16px"
-          width="16px"
-          _hover={{
-            background: 'none',
-          }}
-          _focus={{
-            boxShadow: 'none',
-          }}
-          _active={{
-            background: 'none',
-          }}
-          display={isHeaderHover ? 'block' : 'none'}
-          onClick={() => {
-            if (isHeaderActive) {
-              setIsHeaderActive(false)
-            } else {
-              setIsHeaderActive(true)
-            }
-          }}
-          icon={
-            isHeaderActive ? (
-              <ChevronUpIcon color="white" />
-            ) : (
-              <ChevronDownIcon color="white" />
-            )
-          }
-        />
       </Flex>
     </>
   )
