@@ -22,12 +22,12 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({
   } catch (e) {
     console.error(e)
   }
+
   return (
     <Container maxW={maxWidth} padding={0}>
       <Head>
         <script>
-          const whTooltips =
-          {` colorLinks: true, iconizeLinks: true, renameLinks: true `};
+          {`const whTooltips = { colorLinks: true, iconizeLinks: true, renameLinks: true }`}
         </script>
         <script src="https://wow.zamimg.com/widgets/power.js"></script>
       </Head>

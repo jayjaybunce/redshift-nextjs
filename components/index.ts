@@ -1,3 +1,7 @@
 export * from './TopNav/TopNav'
 export * from './PageWrapper/PageWrapper'
 export * from './ComingSoon/ComingSoon'
+export * from './SanctumOfDomination/Tarragrue'
+export * from './Misc/SpellLink'
+export * from './Misc/FightHeading'
+export * from './Misc/SpellList'

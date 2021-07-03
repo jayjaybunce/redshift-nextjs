@@ -13,6 +13,7 @@ import {
   Box,
   Progress,
 } from '@chakra-ui/react'
+import { Tarragrue } from '../components'
 import { CloseIcon, CheckIcon } from '@chakra-ui/icons'
 
 export const SanctumOfDomination = () => {
@@ -72,7 +73,7 @@ export const SanctumOfDomination = () => {
           </TabList>
           <TabPanels mt={12}>
             <TabPanel>
-              <BossComingSoon title="The Tarragrue" />
+              <Tarragrue />
             </TabPanel>
             <TabPanel>
               <BossComingSoon title="The Eye of the Jailer" />

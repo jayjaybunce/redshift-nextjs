@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
 import { customTheme } from '../theme'
 require('typeface-orbitron')
+require('typeface-roboto')
 import '../font.css'
 
 import { PageWrapper } from '../components'
