@@ -11,10 +11,24 @@ import {
   Link,
   Image,
 } from '@chakra-ui/react'
-import { Tarragrue } from '../components'
+import { Tarragrue, Eye } from '../components'
 import { CloseIcon, CheckIcon } from '@chakra-ui/icons'
 
-export const SanctumOfDomination = () => {
+type Encounter = {
+  title: string
+  mdSrc: string
+  isDowned?: boolean
+  imgSrc: string
+  component?: React.ReactNode
+}
+
+type SanctumOfDominationProps = {
+  encounters: Array<Encounter>
+}
+
+export const SanctumOfDomination: React.FC<SanctumOfDominationProps> = ({
+  encounters,
+}) => {
   return (
     <Flex justify="center" direction="column" align="center" pt={10}>
       <Flex direction="column" justify="space-around">
@@ -45,6 +59,11 @@ export const SanctumOfDomination = () => {
       <Flex pt={10} align="center">
         <Tabs orientation="vertical">
           <TabList>
+            {encounters?.map((item, i) => {
+              return (
+                <StyledTab key={i} img={item?.imgSrc} title={item?.title} />
+              )
+            })}
             <StyledTab img="tarragrueBig.png" title="The Tarragrue" />
             <StyledTab
               img="eyeOfTheJailerBig.png"
@@ -63,11 +82,22 @@ export const SanctumOfDomination = () => {
             <StyledTab img="sylvanasBig.png" title="Sylvannas Windrunner" />
           </TabList>
           <TabPanels>
+            {encounters?.map((item, i) => {
+              return (
+                <TabPanel key={i}>
+                  {item?.component ? (
+                    item?.component
+                  ) : (
+                    <BossComingSoon title={item?.title} />
+                  )}
+                </TabPanel>
+              )
+            })}
             <TabPanel w="6xl" p={0}>
               <Tarragrue />
             </TabPanel>
             <TabPanel w="6xl">
-              <BossComingSoon title="The Eye of the Jailer" />
+              <Eye />
             </TabPanel>
             <TabPanel w="6xl">
               <BossComingSoon title="The Nine" />
