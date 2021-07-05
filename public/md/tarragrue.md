@@ -1,27 +1,69 @@
 # The Tarragrue
+[raidplan.io](https://raidplan.io/plan/W9OI4UciyNKbxkpS/edit)
+
+<br/>
 
 ## Strategy
 
-*Around the Tarragrue's room there are adds and four large adds that drop an anima power
+Around the Tarragrue's room there are adds and four large adds that drop an anima power. Every player will be able to collect four anima powers! These can be easily rerolled. 
 
-One of these anima powers will help massively with the deadliest mechanic.
+A full list of these powers can be found on [wowheads writeup](https://ptr.wowhead.com/news/use-anima-powers-against-tarragrue-raid-encounter-in-sanctum-of-domination-321917)
 
-Plan: [raidplan.io](https://raidplan.io/plan/W9OI4UciyNKbxkpS/edit)
+<br/>
+
+#### Necessary Anime Powers 
+- [Everbeating Heart](https://ptr.wowhead.com/spell=347966) => Need at least one
+- [Oddly Intangible Key](https://ptr.wowhead.com/spell=347967) => Good to have
+
+
+#### Terrible Anima Powers
+- [Erratic Howl](https://ptr.wowhead.com/spell=348027) => Please do not take
+
 
 # Phase One
 
-- The Tarragrue will cast [Chains of Eternity](https://www.wowhead.com/spell=347269) on a player which means death if it isn't intercepted by someone with the [Everbeating Heart](https://www.wowhead.com/spell=338733) power or an immunity.
-- The Tarragrue will cast [Hungering Mist](https://www.wowhead.com/spell=347671) which essentially fills MOST of the floor with black bad and there will be an area that's safe. When Hungering Mist is coming, be ready to move to this safe area(s)
-- The Tarragrue will cast [Remnant of Forgotten Torments](https://ptr.wowhead.com/spell=352368) which spawns a 'Remnant' zone or zones (not sure yet) that will need to be soaked:
-  - [Remnant of Forgotten Torments](https://ptr.wowhead.com/spell=352368)
-    - **Ideally, tanks soak only purple ones and everyone else can soak the others**
-    - Grey zone ([Remnant: Upper Reaches' Might](https://ptr.wowhead.com/spell=352382)) - Soaking increases that players physical damage taken by 10%
-    - Purple zone ([Mort'regar's Echoes](https://ptr.wowhead.com/spell=352389)) - Soaking increases that players magic damage taken by 10%
-    - Orange zone ([Soulforge Heat](https://ptr.wowhead.com/spell=352398)) - Soaking applies a DoT on the player 
-- The Tarragrue will cast [Predators Howl](https://ptr.wowhead.com/spell=347283) 
-  - Players will be affected by [Unshakeable Dread](https://ptr.wowhead.com/spell=347286)
-  - Prior to this cast, everyone should spread (melee especially)
-  - Avoid people with small purple circles around them, or you'll be feared for 8 seconds
+
+## [Chains of Eternity](https://www.wowhead.com/spell=347269)
+=> The Tarragrue will mark a player and after 8 seconds throw a chain at them. We will have a player use [Everbeating Heart](https://www.wowhead.com/spell=338733) to counter this.
+
+<br/>
+
+> <video height="400px" width="800px" autoplay loop muted>
+>   <source src="tarragrue-assets/chains-of-eternity.mp4"/>
+> </video>
+
+
+## [Hungering Mist](https://www.wowhead.com/spell=347671)
+=> Fills most of the floor with black bad. There will be an area that's safe. When Hungering Mist is coming, be ready to move to the safe area.
+
+<br/>
+
+> <video height="400px" width="800px" autoplay loop muted>
+>   <source src="tarragrue-assets/hungering-mist.mp4"/>
+> </video>
+
+
+## [Remnant of Forgotten Torments](https://ptr.wowhead.com/spell=352368)
+=> Spawns a 'Remnant' zone or zones (not sure yet) that needs to be soaked
+
+<br/>
+
+> <video height="400px" width="800px" autoplay loop muted>
+>   <source src="tarragrue-assets/remnant.mp4"/>
+> </video>
+
+#### Three 'Remnants'
+  - Grey zone ([Remnant: Upper Reaches' Might](https://ptr.wowhead.com/spell=352382)) - Soaking increases that players physical damage taken by 10%
+  - Purple zone ([Mort'regar's Echoes](https://ptr.wowhead.com/spell=352389)) - Soaking increases that players magic damage taken by 10%
+  - Orange zone ([Soulforge Heat](https://ptr.wowhead.com/spell=352398)) - Soaking applies a DoT on the player 
+  
+
+## [Predators Howl](https://ptr.wowhead.com/spell=347283) 
+=> Several players will become affected by a purple circle - entering causes [Unshakeable Dread](https://ptr.wowhead.com/spell=347286). Pre-cast melee should spread. Players affected should spread from other players
+
+> <video height="400px" width="800px" autoplay loop muted>
+>   <source src="tarragrue-assets/howl.mp4"/>
+> </video>
 
 # Phase Two
 

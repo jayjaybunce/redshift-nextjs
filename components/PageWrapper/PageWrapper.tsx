@@ -29,7 +29,7 @@ export const PageWrapper: React.FC<PageWrapperProps> = ({
       maxW={maxWidth}
       padding={0}
       backgroundImage="4kbg.png"
-      backgroundSize="1920px"
+      // backgroundSize="1920px"
     >
       <Head>
         <script>

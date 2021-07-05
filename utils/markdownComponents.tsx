@@ -2,6 +2,7 @@ import { Heading, Text, Flex } from '@chakra-ui/react'
 import React from 'react'
 import { ReactMarkdownProps } from 'react-markdown/src/ast-to-react'
 import styled from 'styled-components'
+import Image from 'next/image'
 
 type Levels = '1' | '2' | '3' | '4' | '5' | '6'
 type HeadingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -32,7 +33,7 @@ const StyledOl = styled.ul`
 `
 
 const headingSizes = {
-  h1: '30px',
+  h1: '40px',
   h2: '24px',
   h3: '22px',
   h4: '20px',
@@ -62,6 +63,7 @@ export const markdownComponents = {
       <Heading
         {...headingProps}
         _notFirst={{ pt: 6 }}
+        fontFamily="LifeCraft"
         _first={{ fontFamily: 'LifeCraft', fontSize: 60, align: 'center' }}
       >
         {children}
@@ -139,12 +141,22 @@ export const markdownComponents = {
   },
   blockquote(props: ReactMarkdownProps) {
     return (
-      <Flex p={5} opacity={0.5}>
-        <Flex ml="2rem" pl={2} borderLeft="2px solid grey" align="center">
+      <Flex p={5}>
+        <Flex
+          ml="2rem"
+          pl={2}
+          py={3}
+          borderLeft="2px solid"
+          borderLeftColor="#D44C46"
+          align="center"
+        >
           {props.children}
         </Flex>
       </Flex>
     )
+  },
+  img(props) {
+    return <Image src={`/${props.src}`} height="400px" width="800px" />
   },
   br() {
     return (

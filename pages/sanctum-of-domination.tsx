@@ -138,7 +138,14 @@ export const StyledTab: React.FC<{
             {title}
           </Text>
           {isDowned ? (
-            <CheckIcon color="green.900" />
+            <CheckIcon
+              color="green.900"
+              w={6}
+              h={6}
+              position="absolute"
+              mr="-17.9rem"
+              mt="4rem"
+            />
           ) : (
             <CloseIcon
               w={6}
